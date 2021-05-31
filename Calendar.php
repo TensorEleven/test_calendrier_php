@@ -106,7 +106,7 @@
         $previous_mounth = get_previous_mounth($mounth);
         $date_prev_mounth_last = $year."-".$previous_mounth."-"."01"; 
         $last_day_previous_mounth = date("t",strtotime($date_prev_mounth_last)); //week day integer
-        
+
     /*  
      *   Formating to string and GET method for HTML
      *
@@ -116,7 +116,9 @@
     $year  = (string) $year;
 
     $full_link_previous = "http://localhost/test_calendrier_php/index.php?mounth=".$mounth."&mounth_change=-1&year=".$year;
-    $get_link_previous = "'index.php?mounth=".$mounth."&mounth_change=-1&year=".$year."'";
     $full_link_next = "http://localhost/test_calendrier_php/index.php?mounth=".$mounth."&mounth_change=1&year=".$year;
+    
+    $get_link_previous = "'index.php?mounth=".$mounth."&mounth_change=-1&year=".$year."'";
     $get_link_next = "'index.php?mounth=".$mounth."&mounth_change=1&year=".$year."'";
+    
 ?>

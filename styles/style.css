@@ -1,12 +1,72 @@
-.not-mounth-day{
-    color : grey;
+
+body, h1,h2,h3,p{
+	margin:0;
+	padding: 0;
 }
+/*Table design*/
 
 table{
-	
+
 }
 
 td{
 	text-align: right;
 	padding-right: 5px;
+}
+
+.not-mounth-day{
+    color : grey;
+}
+
+/* positioning*/
+
+.flex-h{
+	display:flex;
+}
+
+
+
+
+.inline{
+
+}
+
+.solid{
+	border : solid 1px;
+}
+
+.center{
+	text-align: center;
+}
+/*Sizing*/
+
+.padding-h{
+	padding: 0 20px;
+}
+
+.calendar-container{
+	width: 420px;
+	min-height: 230px;
+	padding: 10px;
+    justify-content :center;
+}
+
+.date-part{	
+}
+
+input{
+	width: 80px;
+}
+
+#submit{
+	width: 100%;
+	height: 30px;
+}
+
+#input-mounth{
+	width: 80px;
+}
+
+#input-year{
+	width: 100px;
 }
