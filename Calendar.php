@@ -37,7 +37,10 @@
         return $y;
     }
 
-    $year = get_year($_GET['year']);
+    if(isset($_GET['year']))
+        $year = get_year($_GET['year']);
+    else
+        $year = get_actual_year();
     $actual_year = get_actual_year();
     
     /*
@@ -70,7 +73,7 @@
      *
      */
 
-    if($_GET["mounth_change"]==-1){
+    if(isset($_GET["mounth_change"])&&$_GET["mounth_change"]==-1){
         $mounth = $_GET["mounth"]-1;    //go to last week
         
         if($mounth < 1){                //get previous year
@@ -81,7 +84,7 @@
         $_GET["mounth_change"] = null;
     }
     
-    else if($_GET["mounth_change"]==1){ 
+    else if(isset($_GET["mounth_change"])&&$_GET["mounth_change"]==1){ 
         $mounth = $_GET["mounth"]+1;        //go to next week
         if ($mounth>12){                    //if december exceeded 
             $mounth = 1;
@@ -99,7 +102,7 @@
         $date_last = date("Y-m-t",strtotime($date)); 
         $last_day_mounth = date("N",strtotime($date_last));
         $mounth_end = date("t", strtotime($date));
-        echo 'mounth end'.$mounth_end;
+        
         $previous_mounth = get_previous_mounth($mounth);
         $date_prev_mounth_last = $year."-".$previous_mounth."-"."01"; 
         $last_day_previous_mounth = date("t",strtotime($date_prev_mounth_last)); //week day integer
@@ -111,4 +114,9 @@
 
     $mounth = (string) $mounth;
     $year  = (string) $year;
+
+    $full_link_previous = "http://localhost/test_calendrier_php/index.php?mounth=".$mounth."&mounth_change=-1&year=".$year;
+    $get_link_previous = "'index.php?mounth=".$mounth."&mounth_change=-1&year=".$year."'";
+    $full_link_next = "http://localhost/test_calendrier_php/index.php?mounth=".$mounth."&mounth_change=1&year=".$year;
+    $get_link_next = "'index.php?mounth=".$mounth."&mounth_change=1&year=".$year."'";
 ?>
