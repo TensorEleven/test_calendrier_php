@@ -15,7 +15,7 @@
     
     <div class="calendar-container">
         <div>
-            <h3 class="center" id="title">Calendrier</h3>
+            <h3 class="center title" id="title">Calendrier</h3>
         </div>
         
         <div class="part flex-h flex-center">
@@ -92,7 +92,7 @@
         <div class="right-date date-part padding-h">
             <!-- START SHOW TODAY -->
             <div class="date" id="today">
-                <h3 id>Aujourd'hui</h3>
+                <h3 id>Aujourd'hui :</h3>
                 <p>On est le : <?=$actual_day?> - <?=$str_actual_mounth?> - <?=$actual_year?></p>
             </div>
             <!-- END SHOW TODAY-->
@@ -100,7 +100,7 @@
             <!--ADVANCE DATE START-->
             
             <div class="find-date">
-                <h3>Trouver une date</h3>
+                <h3 class="title">Trouver une date :</h3>
                 <form action="index.php" method="get">
                     <div class="flex-h">
                         <input type="text" name="mounth" placeholder="moi" id="input-mounth">
@@ -112,7 +112,7 @@
             
             <!--ADVANCE DATE END-->
             <div class="this-mounth center">
-                <a href="http://localhost/test_calendrier_php/index.php">Reset</a>
+                <a href="http://localhost/test_calendrier_php/index.php">se retrouver</a>
             </div>
         </div>
         </div>
