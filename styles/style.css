@@ -2,7 +2,14 @@
 body, h1,h2,h3,p{
 	margin:0;
 	padding: 0;
+	font-family:;
 }
+
+body {
+	background-color: #F5F5F5;
+}
+
+
 /*Table design*/
 
 table{
@@ -11,7 +18,8 @@ table{
 
 td{
 	text-align: right;
-	padding-right: 5px;
+	padding-right: 10px;
+
 }
 
 .not-mounth-day{
@@ -24,9 +32,6 @@ td{
 	display:flex;
 }
 
-
-
-
 .inline{
 
 }
@@ -38,6 +43,24 @@ td{
 .center{
 	text-align: center;
 }
+
+.flex-center{
+	justify-content: center;
+}
+
+.calendar-nav{
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+}
+.right-date{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+}
+.find-date{
+	width: 100%;
+}
 /*Sizing*/
 
 .padding-h{
@@ -45,10 +68,21 @@ td{
 }
 
 .calendar-container{
-	width: 420px;
-	min-height: 230px;
-	padding: 10px;
+	width: 490px;
+	min-height: 230px;	
+	
+	margin: auto;
+	margin-top: 40px;
+	padding: 20px 25px;
     justify-content :center;
+
+	background-color: #FAFAFA;
+	border-radius: 5px;
+	box-shadow: 2px 4px 8px #808080;
+}
+
+.table{
+	margin-top: 10px;
 }
 
 .date-part{	
@@ -58,15 +92,20 @@ input{
 	width: 80px;
 }
 
+#title{
+	margin-bottom: 20px;
+	letter-spacing: 2px;
+}
+
 #submit{
 	width: 100%;
 	height: 30px;
 }
 
 #input-mounth{
-	width: 80px;
+	width: 56px;
 }
 
 #input-year{
-	width: 100px;
+	width: auto;
 }

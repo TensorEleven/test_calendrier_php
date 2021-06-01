@@ -12,15 +12,19 @@
     ?>
     
     <!-- MAIN HTML CONTENT -->
-
-    <div class="calendar-container flex-h solid inline">
-        <div class="left-date date-part padding-h">
+    
+    <div class="calendar-container">
+        <div>
+            <h3 class="center" id="title">Calendrier</h3>
+        </div>
+        
+        <div class="part flex-h flex-center">
+            <div class="left-date date-part padding-h">
             <!-- CALENDAR -->
             <div class="calendar">
                 <div class="nav-calendar">
-                    <h3>Calendar</h3>
                     <!-- START MOUNTH NAV -->
-                    <div class="mpunth-nav center">
+                    <div class="calendar-nav center">
                         <button onclick="loadCalendar(<?=$get_link_previous?>)" class="bnt-nav" id="btn-previous"><</button>
                         <?=$m[$mounth]?>
                         <button onclick="loadCalendar(<?=$get_link_next?>)" class="btn-nav" id="btn-next">></button>
@@ -81,38 +85,38 @@
                             echo '</tr>';
                         }?>
                         </table>
-                    </div>
-                </div>
-            </div>
-            <div class="right-date date-part padding-h">
-                <!-- START SHOW TODAY -->
-                <div class="date" id="today">
-                    <h3>Aujourd'hui</h3>
-                    <p>On est le : <?=$actual_day?> - <?=$str_actual_mounth?> - <?=$actual_year?></p>
-                </div>
-                <!-- END SHOW TODAY-->
-            
-                <hr>
-
-                <!--ADVANCE DATE START-->
-                
-                <div class="find-date">
-                    <h3>Trouver une date</h3>
-                    <form action="index.php" method="get">
-                        <input type="text" name="mounth" placeholder="moi" id="input-mounth">
-                        <input type="text" name="year" placeholder="année" id="input-year">
-                        <br>
-                        <input type="submit" value="Aller à" id="submit">
-                    </form>
-                </div>
-                
-                <!--ADVANCE DATE END-->
-                <hr>
-                <div class="this-mounth center">
-                    <a href="http://localhost/test_calendrier_php/index.php">Reset</a>
                 </div>
             </div>
         </div>
+
+        <div class="right-date date-part padding-h">
+            <!-- START SHOW TODAY -->
+            <div class="date" id="today">
+                <h3 id>Aujourd'hui</h3>
+                <p>On est le : <?=$actual_day?> - <?=$str_actual_mounth?> - <?=$actual_year?></p>
+            </div>
+            <!-- END SHOW TODAY-->
+
+            <!--ADVANCE DATE START-->
+            
+            <div class="find-date">
+                <h3>Trouver une date</h3>
+                <form action="index.php" method="get">
+                    <div class="flex-h">
+                        <input type="text" name="mounth" placeholder="moi" id="input-mounth">
+                        <input type="text" name="year" placeholder="année" id="input-year">
+                    </div>
+                    <input type="submit" value="Aller à" id="submit">
+                </form>
+            </div>
+            
+            <!--ADVANCE DATE END-->
+            <div class="this-mounth center">
+                <a href="http://localhost/test_calendrier_php/index.php">Reset</a>
+            </div>
+        </div>
+        </div>
+        
     </div>
     
     <script type="text/javascript">
