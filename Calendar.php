@@ -96,13 +96,14 @@
         $first_day_mounth = date("N",strtotime($date_first)); // N is the integer value of the week day   
         
         $date = $year."-".$mounth."-"."01";                   // timestamp first day of the mounth
-        $date_last = date("Y-m-t",strtotime($date));          // Get the last day of mounth date 
+        $date_last = date("Y-m-t",strtotime($date)); 
         $last_day_mounth = date("N",strtotime($date_last));
-
+        $mounth_end = date("t", strtotime($date));
+        echo 'mounth end'.$mounth_end;
         $previous_mounth = get_previous_mounth($mounth);
         $date_prev_mounth_last = $year."-".$previous_mounth."-"."01"; 
-        $last_day_previous_mounth = date("t",strtotime($date_prev_mounth_last));
-
+        $last_day_previous_mounth = date("t",strtotime($date_prev_mounth_last)); //week day integer
+        
     /*  
      *   Formating to string and GET method for HTML
      *

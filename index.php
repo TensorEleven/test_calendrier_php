@@ -2,7 +2,6 @@
 <head>
     <title>test calendrier</title>
     <meta charset ="UTF_8">
-
 </head>
 <body>
     
@@ -48,6 +47,28 @@
         
     <a href="http://localhost/test_calendrier_php/index.php">CALENDAR</a>
 
-    
+    <!-- FORMAT CALENDAR GRID-->
+    <hr>
+    <h3>Grid</h3>
+    <br>
+    <?php
+        $width = 7;
+        $height = 5;
+        $counter = $last_day_previous_mounth - $first_day_mounth;
+        
+        for($i=1;$i<=$height;$i++){
+            for($j=1;$j<=$width;$j++){
+
+                if($counter>$last_day_previous_mounth)
+                    $counter = 1;
+                else if ($counter>$mounth_end)
+                    $counter = 1;
+
+                echo $counter.'-';
+                $counter++;
+            }
+            echo '<br>';
+        }
+    ?>
 </body>
 </html>
