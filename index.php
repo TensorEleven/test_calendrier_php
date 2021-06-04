@@ -2,6 +2,7 @@
 <head>
     <title>test calendrier</title>
     <meta charset ="UTF_8">
+    
 </head>
 <body>
     
@@ -55,20 +56,35 @@
         $width = 7;
         $height = 5;
         $counter = $last_day_previous_mounth - $first_day_mounth;
-        
-        for($i=1;$i<=$height;$i++){
-            for($j=1;$j<=$width;$j++){
-
-                if($counter>$last_day_previous_mounth)
-                    $counter = 1;
-                else if ($counter>$mounth_end)
-                    $counter = 1;
-
-                echo $counter.'-';
-                $counter++;
-            }
-            echo '<br>';
-        }
     ?>
+    <table>
+        <tr>
+            <th>lundi</th>
+            <th>mardi</th>
+            <th>mercredi</th>
+            <th>jeudi</th>
+            <th>vendredi</th>
+            <th>samedi</th>
+            <th>dimanche</th>
+        </tr>
+        <?php
+            
+            for($i=1;$i<=$height;$i++){
+                echo '<tr>';
+                for($j=1;$j<=$width;$j++){
+
+                    if($counter>$last_day_previous_mounth||$counter>$mounth_end){
+                        $counter = 1;
+                        echo '<td class ="not-mounth-day">'.$counter.'</td>';
+                    }
+                    else
+                        echo '<td class ="is-mounth-day">'.$counter.'</td>';
+                    
+                    $counter++;
+                }
+                echo '</tr>';
+            }
+        ?>
+    </table>
 </body>
 </html>
