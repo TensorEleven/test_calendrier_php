@@ -2,7 +2,6 @@
 body, h1,h2,h3,p{
 	margin:0;
 	padding: 0;
-	font-family:;
 }
 
 body {
@@ -11,10 +10,6 @@ body {
 
 
 /*Table design*/
-
-table{
-
-}
 
 td{
 	text-align: right;
@@ -35,9 +30,6 @@ h3{
 	display:flex;
 }
 
-.inline{
-
-}
 
 .solid{
 	border : solid 1px;
@@ -91,9 +83,6 @@ h3{
 
 .table{
 	margin-top: 10px;
-}
-
-.date-part{	
 }
 
 input{
